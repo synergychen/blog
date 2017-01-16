@@ -1,2 +1,3 @@
-# blog
-Personal blog
+# Blog
+
+Welcome to Chen's Blog

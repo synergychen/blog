@@ -14,6 +14,7 @@ categories:
   * [Check Service](#check-service)
 * [Setup ElasticSearch](#setup-elasticsearch)
   * [Install ElasticSearch](#install-elasticsearch)
+  * [Check Service](#check-service)
 * [Integrate MongoDB with ElasticSearch](#integrate-mongodb-with-elasticsearch)
   * [Configure MongoDB Replica](#configure-mongodb-replica)
   * [Install ElasticSearch Plugins](#install-elasticsearch-plugins)
@@ -102,9 +103,11 @@ brew install elasticsearch@1.7
 brew link elasticsearch@1.7
 # start service
 brew services start elasticsearch@1.7
+```
 
 ### Check Service
 
+```
 # check if it's running
 curl -XGET http://localhost:9200
 ```

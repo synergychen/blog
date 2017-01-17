@@ -8,7 +8,19 @@ categories:
 ## Table of Contents
 
 * [Setup MongoDB](#setup-mongodb)
+  * [Install MongoDB](#install-mongodb)
+  * [Default Path of DB and Config file](#default-path-of-db-and-config-file)
+  * [Change Default Setting](#change-default-setting)
+  * [Check Service](#check-service)
 * [Setup ElasticSearch](#setup-elasticsearch)
+  * [Install ElasticSearch](#install-elasticsearch)
+* [Integrate MongoDB with ElasticSearch](#integrate-mongodb-with-elasticsearch)
+  * [Configure MongoDB Replica](#configure-mongodb-replica)
+  * [Install ElasticSearch Plugins](#install-elasticsearch-plugins)
+* [Test Case](#test-case)
+  * [Configure River](#configure-river)
+  * [Feed Data to MongoDB](#feed-data-to-mongodb)
+  * [Query Check](#query-check)
 
 ## Setup MongoDB
 
@@ -99,7 +111,7 @@ curl -XGET http://localhost:9200
 
 ## Integrate MongoDB with ElasticSearch
 
-### MongoDB - Configure Replica
+### Configure MongoDB Replica
 
 Setup replica set, in order to create a data tunnel between MongoDB and ElasticSearch.
 
@@ -127,9 +139,9 @@ mongo
 > rs.status()
 ```
 
-## ElasticSearch - Install Plugins
+### Install ElasticSearch Plugins
 
-### Mapper Attachments Plugin
+**Mapper Attachments Plugin**
 
 ```
 cd /usr/local/Cellar/elasticsearch@1.7/1.7.6
@@ -137,14 +149,14 @@ cd /usr/local/Cellar/elasticsearch@1.7/1.7.6
 bin/plugin install elasticsearch/elasticsearch-mapper-attachments/2.7.1
 ```
 
-### MongoDB River Plugin
+**MongoDB River Plugin**
 
 ```
 cd /usr/local/Cellar/elasticsearch@1.7/1.7.6
 bin/plugin --install com.github.richardwilly98.elasticsearch/elasticsearch-river-mongodb/2.0.9
 ```
 
-### Mobz Plugin
+**Mobz Plugin**
 
 Enable access to ES through web interface
 
@@ -158,7 +170,7 @@ Now we could access to ES through
 http://localhost:9200/_plugin/head/
 ```
 
-## Link Everything Together
+## Test Case
 
 ### Configure River
 
